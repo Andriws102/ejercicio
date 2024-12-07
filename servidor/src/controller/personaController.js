@@ -10,8 +10,22 @@ const obtenerPersonas = (req, res) => {
             res.json(result);
         }
     });
-}
+};
+
+const registrarPersona = (req, res) => { 
+    const {nombre,apellido,email,telefono} = req.body;
+    personaModel.registrarPersona(nombre,apellido,email,telefono, (err, result) => {
+        if(err){
+            res.status(500).json({
+                error: err
+            });
+        }else{
+            res.json(result);
+        }
+    });
+};
 
 module.exports = {
-    obtenerPersonas
+    obtenerPersonas,
+    registrarPersona
 }
