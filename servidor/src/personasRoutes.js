@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const personaController = require('./controller/personaController');
 
-router.get('/person', (req, res) => {
-    res.json({ message: 'Entro al cliente' });
-});
+router.get('/person', personaController.obtenerPersonas);
 
 module.exports = router;
