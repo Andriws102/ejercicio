@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     // Agregar nueva fila
                     const newRow = table.insertRow();
                     newRow.innerHTML = `
+                        <td>${element.id}</td>
                         <td>${element.nombre}</td>
                         <td>${element.apellido}</td>
                         <td>${element.email}</td>
